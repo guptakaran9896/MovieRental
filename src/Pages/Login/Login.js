@@ -40,6 +40,7 @@ const Login = (props) => {
   };
 
   const onLogin = async () => {
+    navigate("/dashboard")
     if (loading) return;
     if (!validateEmail(loginData.current.email)) {
       setData((data) => { return { ...data, phone: loginData.email, email: null } });

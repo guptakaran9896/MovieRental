@@ -5,6 +5,7 @@ import "./assets/scss/module.scss";
 import "./assets/scss/theme.scss";
 import "toastr/build/toastr.min.css";
 import ForgetPasswordPage from './Pages/Login/ForgetPassword';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login/>} />
       <Route path="/forgot-password" element={<ForgetPasswordPage/>} />
-
+      <Route path="/dashboard" element={<Dashboard/>} />
     </Routes>
     </BrowserRouter>
   );
