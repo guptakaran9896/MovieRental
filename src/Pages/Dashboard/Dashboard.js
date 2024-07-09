@@ -7,7 +7,7 @@ import Nf_ori from "./Net";
 const Dashboard = () => {
   const [modal, setModal] = useState(false);
   return (
-    <Card>
+    <Card className="background-main">
       <Nav isAuthenticated={false} />
     </Card>
   );

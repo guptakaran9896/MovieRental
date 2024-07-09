@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { useNavigate } from "react-router-dom";
+import Nf_ori from "./Net";
 
 function Nav({isAuthenticated}) {
  const navigate = useNavigate();
@@ -38,6 +39,9 @@ function Nav({isAuthenticated}) {
             </>
           )}
         </div>
+      </div>
+      <div className="mt-5">
+      <Nf_ori />
       </div>
     </div>
   );
