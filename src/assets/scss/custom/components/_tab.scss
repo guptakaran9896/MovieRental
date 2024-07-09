@@ -1,0 +1,36 @@
+.tab-active-left {
+    background-color: rgba(159, 115, 169, .459);
+    border-right: 3px solid #9f73a9 !important;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600 !important;
+    margin-bottom: 5px;
+}
+
+.tab-inactive-left {
+    background: #fdfdfd !important;
+    cursor: pointer;
+    font-weight: 400 !important;
+    border-right: 3px solid #dfdfdf !important;
+    margin-bottom: 5px;
+    border-bottom: 0px !important;
+}
+
+.tab-active {
+    background-color: rgba(159, 115, 169, .459);
+    border-left: 3px solid #9f73a9 !important;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600 !important;
+    margin-bottom: 5px;
+}
+
+
+.tab-inactive {
+    background: #fdfdfd !important;
+    cursor: pointer;
+    font-weight: 400 !important;
+    border-left: 3px solid #dfdfdf !important;
+    margin-bottom: 5px;
+    border-bottom: 0px !important;
+}

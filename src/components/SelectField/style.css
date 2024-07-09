@@ -1,0 +1,150 @@
+.selectfield {
+  font-size: 0.75rem;
+  width: 100%;
+  color: #52585f;
+  /* padding: 0 10px; */
+  margin: 0 6px;
+  position: relative;
+  /* border-radius: 0.5rem; */
+}
+.selectfield__wrapper {
+  display: flex;
+  width: 100%;
+  max-height: 2.5rem;
+  min-width: 80px;
+  align-items: center;
+}
+.selectfield__wrapper > button {
+  border: none;
+  padding: 2px 5px;
+  margin-left: 4px;
+}
+.selectfield__container {
+  width: 100%;
+  /* padding: 10px 0; */
+  /* background-color: rgb(30, 72, 109); */
+}
+
+.selectfield__select {
+  color: #52585f;
+  border: none;
+  font-size: inherit;
+  height: 30px;
+}
+.selectfield__select:focus {
+  color: #52585f;
+  border: none;
+  outline: none;
+  max-height: 300px;
+}
+/* .selectfield__container{
+  height: 400px;
+} */
+.selectfield__label,
+.selectfield__clear {
+  font-weight: normal;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.6rem;
+  /* font-size: 0.6rem; */
+  font-size: 0.75rem;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in,
+    color 200ms ease-in;
+  line-height: 0.8rem;
+}
+.selectfield__clear {
+  padding: 0;
+  top: 0.5rem;
+}
+.selectfield__clear > i {
+  position: relative;
+  left: 0.5rem;
+  background-color: white;
+}
+.selectfield__notempty_input,
+.selectfield__select:focus ~ .selectfield__label {
+  top: -0.5rem;
+  border: none;
+  padding: 0;
+  left: 0.1rem;
+  font-size: 0.6rem;
+  color: #52585fcb;
+}
+.selectfield__innercontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.selectfield__leftComponent,
+.selectfield__rightComponent {
+  width: max-content;
+  max-width: 10%;
+}
+
+.selectfield__clear {
+  left: unset;
+  right: 15px;
+  cursor: pointer;
+}
+/* .css-1s5hiak-control{
+  width: 100%;
+} */
+.component_pointer {
+  cursor: pointer;
+}
+
+.selectfield__error,
+.selectfield__suggestion {
+  position: relative;
+  left: 8px;
+}
+.selectfield__error {
+  font-style: normal;
+  font-size: 0.6rem;
+  color: rgb(236, 115, 75);
+}
+
+.selectfield__suggestion {
+  bottom: 0.6rem;
+}
+
+.change-data {
+  background-color: #fff;
+  border: 1px double #eee;
+  color: rgb(41, 146, 208);
+  padding: 6px 10px 6px 10px;
+  /* display: flex; */
+  justify-content: center;
+  min-width: 100%;
+  min-height: 8px;
+  cursor: pointer;
+  /* box-shadow: 3px 3px -5px #999999; */
+}
+
+.fetching {
+  display: flex;
+  justify-content: center;
+  font-size: .75rem;
+  padding: 20px 0;
+  font-weight: 200;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inline-select-field {
+  height: 14px;
+}
+.selectfield__plain > div {
+  border-color: transparent;
+}
+.selectfield__plain:hover > div {
+  border-color: #ced4da;
+}

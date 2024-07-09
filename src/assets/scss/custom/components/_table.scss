@@ -1,0 +1,91 @@
+// 
+// _table.scss
+// 
+
+.table {
+  th {
+    font-weight: $font-weight-bold;
+  }
+
+  .table-light {
+    color: $body-color;
+    border-color: $table-border-color;
+    background-color: $table-head-bg;
+
+  }
+}
+
+.table>:not(caption)>*>* {
+  border-bottom-width: 0px;
+  border-top-width: 0px;
+  padding: 6px;
+}
+
+.table>:not(caption)>* td {
+  padding-bottom: 0;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  border-bottom-color: $table-border-color;
+}
+
+
+
+.table-dark>:not(:last-child)>:last-child>* {
+  border-bottom-color: $table-dark-border-color;
+}
+
+.table-nowrap {
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+}
+
+//Table centered
+.table-centered {
+
+  td,
+  th {
+    vertical-align: middle !important;
+  }
+}
+
+
+
+// table card list
+
+.table-card-list {
+  border-collapse: separate;
+  border-spacing: 0 6px;
+
+  tr {
+    background-color: $card-bg;
+  }
+
+}
+
+.responsiveTable thead tr {
+  border-bottom: 2px solid #dfdfdf;
+  background-color: #FFF;
+}
+
+.responsiveTable tbody tr {
+  border-bottom: 1px solid #f5f6f8;
+}
+.responsiveTable tbody tr td:last-child {
+  padding-top:0px;
+  float:right;
+}
+
+.table-row-selected {
+  background-color: #E5DDE7 !important;
+  font-weight: 600;
+  border-left: 3px solid $primary;
+}
+@media screen and (max-width: 640px) {
+  .responsiveTable tbody tr td:last-child {
+    float:initial;
+  }
+}

@@ -1,0 +1,260 @@
+.inputfield {
+  /* margin: 2px 4px; */
+  position: relative;
+  width: 100%;
+  padding: 0 6px;
+  height: max-content;
+  border: none;
+}
+
+.icon {
+  align-self: center;
+  display: flex;
+  margin-top: 0.4rem;
+}
+
+.edit_cross {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 10px;
+}
+
+.cross-map {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 0px;
+}
+.edit_back {
+  /* position: absolute; */
+  z-index: 1000;
+  padding: 50px 0 0 0;
+  /* right: 10px;
+  top: 47px */
+}
+
+.border-left-gray {
+  border-left: "2px solid #ced4da";
+}
+
+.inputfield__input {
+  height: 30px;
+  /* padding-top: 4px; */
+  width: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  outline: none;
+  background: none;
+  /* color: #52585f; */
+}
+
+/* .inputfield__input:focus {
+  border-color: #181818;
+} */
+.inputfield__label,
+.inputfield__clear {
+  font-weight: normal;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.4rem;
+  /* font-size: 0.6rem; */
+  font-size: 0.75rem;
+  cursor: text;
+ 
+}
+
+.inputfield__eye {
+  font-weight: normal;
+  position: absolute;
+  left: 0.6rem;
+  top: 0.35rem;
+  font-size: 0.8rem;
+  color: rgba(121, 121, 121, 0.694);
+  cursor: text;
+  background-color: white;
+}
+
+.inputfield__label {
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in,
+    color 200ms ease-in;
+}
+
+.inputfield:hover .inputfield__clear {
+  opacity: 1;
+  background-color: rgba(128, 128, 128, 0.637);
+  position: absolute;
+  padding: 0 1%;
+  padding-top: 7px;
+  height: 100%;
+  top: -1%;
+  right: 0%;
+}
+
+.inputfield__clear > i {
+  position: relative;
+  left: 0rem;
+  color: hsl(0, 0%, 80%);
+}
+
+.inputfield__eye > i {
+  opacity: 1;
+  position: relative;
+  left: 0rem;
+  color: hsl(0, 0%, 80%);
+}
+
+.inputfield__input:focus ~ .inputfield__label,
+.inputfield__input:not(:placeholder-shown).inputfield__input:not(:focus)
+  ~ .inputfield__label {
+  font-weight: normal;
+  top: -0.6rem;
+  font-size: 0.6rem;
+  /* background-color: olive; */
+  color: #52585fcb;
+  border: none;
+  padding: 0;
+  max-height: fit-content;
+  left: 0.5rem;
+}
+
+.inputfield__innercontainer {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.inputfield__leftComponent,
+.inputfield__rightComponent {
+  width: max-content;
+  object-fit: contain;
+  height: 100%;
+  /* max-width: 22px; */
+  max-height: 100%;
+}
+
+.inputfield__clear {
+  left: unset;
+  right: 7px;
+  cursor: pointer;
+  padding: 0;
+  top: 0.2rem;
+  opacity: 0;
+}
+
+.inputfield__eye {
+  left: unset;
+  right: 7px;
+  cursor: pointer;
+  padding: 0;
+  top: 0.2rem;
+  opacity: 1;
+  background-color: rgba(255, 255, 255);
+  position: absolute;
+  padding: 0 1%;
+  padding-top: 7px;
+  height: 100%;
+  top: -1%;
+  right: 0%;
+}
+
+.component_pointer {
+  cursor: pointer;
+  width: max-content;
+  max-width: max-content;
+}
+
+.inputfield__error,
+.inputfield__suggestion {
+  position: relative;
+  left: 8px;
+}
+
+.inputfield__error {
+  font-style: normal;
+  font-size: 0.6rem;
+  color: rgb(236, 115, 75);
+}
+
+.inputfield__suggestion {
+  bottom: 0.4rem;
+}
+
+.__backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 6;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  margin-right: 40px;
+}
+
+.__modal {
+  background-color: #fff;
+  /* height: 30%; */
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.__modal-close-btn {
+  position: absolute !important;
+  right: -20px;
+  top: -20px;
+  border-radius: 50% !important;
+  height: 40px;
+  width: 40px;
+  padding: 0px !important;
+}
+
+.__dz-close-btn {
+  position: absolute !important;
+  right: -10px;
+  top: -10px;
+  border-radius: 50% !important;
+  height: 24px;
+  width: 24px;
+  padding: 0px !important;
+}
+
+input:-internal-autofill-selected {
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.border-none > div {
+  border-color: transparent;
+}
+.inputfield__plain {
+  border-color: transparent;
+}
+.inputfield__plain:hover {
+  border-color: #ced4da;
+}
+
+.inputfield__innerInline {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
