@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { ApiHandler } from "../apiHandler/apiHandler";
 import { doGET } from "../util/httpUtil";
-import { ENDPOINTS,API_METHODS } from "../../utils/Constants";
+import { ENDPOINTS, API_METHODS } from "../../utils/Constants";
 export const UserContext = React.createContext();
 
 export const UserProvider = (props) => {
@@ -21,13 +21,12 @@ export const UserProvider = (props) => {
         method: API_METHODS.POST,
         endPoint: ENDPOINTS.adminLogin,
       });
-      console.log(response.data)
+      console.log(response.data);
       if (response.status === 200) {
         setAuthToken(response.data.token);
         setIsLoggedIn(true);
-        localStorage.setItem("name", response.data.name)
-        localStorage.setItem("profileImage", response.data.userDetails?.profileImage)
-        localStorage.setItem("role", response.data.userDetails?.adminRole)
+        localStorage.setItem("name", response.data.name);
+        localStorage.setItem("token", response.data.token);
         setIsAdmin(true);
         return response;
       } else {
@@ -39,14 +38,11 @@ export const UserProvider = (props) => {
   };
   const logout = async () => {
     try {
-      const response = await doGET(ENDPOINTS.logout)
+      // const response = await doGET(ENDPOINTS.logout);
+      setIsLoggedIn(false)
       localStorage.clear();
-
-    } catch (err) {
-
-    }
-
-  }
+    } catch (err) {}
+  };
   return (
     <UserContext.Provider
       value={{

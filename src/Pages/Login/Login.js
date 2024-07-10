@@ -8,7 +8,7 @@ import { UserContext} from "../../store/context/userContext";
 
 const Login = (props) => {
   let navigate = useNavigate();
-  const  adminLogin  = useContext(UserContext);
+  const  {adminLogin}  = useContext(UserContext);
   const loginData = useRef( {
     authType: "password",
     countryCode: 91,
@@ -18,7 +18,6 @@ const Login = (props) => {
     email: "",
     emailPhone: "",
   })
-  const [isEmail, setIsEmail] = useState(false);
   const  showMessage  = useContext(DialogContext);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -40,7 +39,6 @@ const Login = (props) => {
   };
 
   const onLogin = async () => {
-    navigate("/dashboard")
     if (loading) return;
     if (!validateEmail(loginData.current.email)) {
       setData((data) => { return { ...data, phone: loginData.email, email: null } });
@@ -52,6 +50,9 @@ const Login = (props) => {
       var response = await adminLogin(loginData.current);
       if (response.status === 200) {
         navigate("/dashboard", { replace: true });
+        showMessage(
+          "success"
+        );
       } else {
         showMessage(
           "error",

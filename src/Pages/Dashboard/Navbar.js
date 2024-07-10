@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Nav.css";
 import { useNavigate } from "react-router-dom";
 import Nf_ori from "./Net";
+import { UserContext } from "../../store/context/userContext";
 
 function Nav({isAuthenticated}) {
  const navigate = useNavigate();
+ const {logout} = useContext(UserContext);
   return (
     <div className="navbar_main">
       <div className="netflix_logo">
@@ -16,7 +18,7 @@ function Nav({isAuthenticated}) {
         />
         <div className="nav_left_menu" >
         {isAuthenticated ? ( <>
-            <a  href="/" className="menu_bar">HOME</a>
+            <a  href="/dashboard" className="menu_bar">HOME</a>
             <a className="menu_bar">MOVIES</a>
             <a className="menu_bar">TV SHOWS</a>
             <a className="menu_bar">MY LIST</a>
@@ -31,7 +33,7 @@ function Nav({isAuthenticated}) {
         <div className="nav_right">
           UNLIMITED TV SHOWS & MOVIES
           {isAuthenticated ? ( 
-            <button className="btn_join_now">LOGOUT</button>
+            <button className="btn_join_now" onClick={logout}>LOGOUT</button>
           ) : (
             <>
               <button className="btn_join_now">JOIN NOW</button>

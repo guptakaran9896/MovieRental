@@ -10,13 +10,11 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 function App() {
   return (
     <div className='App'>
-    <BrowserRouter>
     <Routes>
       <Route path="/" element={<Login/>} />
       <Route path="/forgot-password" element={<ForgetPasswordPage/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
     </Routes>
-    </BrowserRouter>
     </div>
   );
 }

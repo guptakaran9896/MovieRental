@@ -8,7 +8,7 @@ export const API_METHODS = {
 
 export const ENDPOINTS = {
   login: "/auth/customer/authorize",
-  adminLogin: "/api/auth/admin/login",
+  adminLogin: "http://localhost:3000/auth",
   logout: "/api/profile/logout",
   getCaptcha: '/api/auth/get/captcha',
   validateCaptcha:'/api/auth/verify/captcha'
