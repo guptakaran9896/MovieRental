@@ -89,11 +89,16 @@ const CardContainer = (props) => {
           }}
           content={card.content}
           imgUrl={card.imgUrl}
+          
         />
       ))}
       {modal ? (
-        <Modal onChange={() => setModal(false)} className="col-sm-5">
-          <MovieDescription movie={movie}/>
+        <Modal onChange={() => setModal(false)} className="col-sm-5"  style={{
+        backgroundColor: 'transparent',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        }}>
+          <MovieDescription movie={movie} />
         </Modal>
       ) : (
         ""
