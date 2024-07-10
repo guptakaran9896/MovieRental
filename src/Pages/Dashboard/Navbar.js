@@ -3,7 +3,7 @@ import "./Nav.css";
 import { useNavigate } from "react-router-dom";
 import Nf_ori from "./Net";
 import { UserContext } from "../../store/context/userContext";
-
+import image from "../../assets/images/logo_rntl.jpeg"
 function Nav({isAuthenticated}) {
  const navigate = useNavigate();
  const {logout} = useContext(UserContext);
@@ -12,9 +12,10 @@ function Nav({isAuthenticated}) {
       <div className="netflix_logo">
         <div className="nav_left" >
         <img
-          src="https://thewhitonline.com/wp-content/uploads/2020/09/netflix-logo.png"
+          src={image}
           alt="neflix_logo"
           height="60px"
+          
         />
         <div className="nav_left_menu" >
         {isAuthenticated ? ( <>
