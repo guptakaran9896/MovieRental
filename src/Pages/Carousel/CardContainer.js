@@ -114,7 +114,7 @@ const CardContainer = (props) => {
             backgroundPosition: "center",
           }}
         >
-          <MovieDescription movie={movie} />
+          <MovieDescription movie={movie} setModal={setModal}/>
         </Modal>
       ) : (
         ""

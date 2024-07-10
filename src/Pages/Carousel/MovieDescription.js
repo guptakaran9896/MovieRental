@@ -5,8 +5,8 @@ import { DialogContext } from "../../store/context/DialogContext";
 import { UserContext } from "../../store/context/userContext";
 import { useNavigate } from "react-router-dom";
 
-const MovieDescription = ({ movie }) => {
-  const { showMessage } = useContext(DialogContext);
+const MovieDescription = ({ movie, setModal }) => {
+  const { showMessage, showError } = useContext(DialogContext);
   const { isLoggedIn } = useContext(UserContext);
   const navigate = useNavigate();
   const RentMovie = async () => {
@@ -16,10 +16,16 @@ const MovieDescription = ({ movie }) => {
         movieId: movie?._id,
       };
       const response = await doPOST(ENDPOINTS.rentMovie, data);
+      console.log(response);
       if (response.status == 200) {
         showMessage("Movie Rented Successfully");
-      }
-    } catch (error) {}
+      } else showError("Error");
+
+      setModal(false);
+    } catch (error) {
+      showError(error);
+      console.log(error);
+    }
   };
   return (
     <div className="popup_movie">
