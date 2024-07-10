@@ -27,6 +27,7 @@ export const UserProvider = (props) => {
         setIsLoggedIn(true);
         localStorage.setItem("name", response.data.name);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("id",response.data._id)
         setIsAdmin(true);
         return response;
       } else {

@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Modal from "../../components/Common/Modal";
 import MovieDescription from "./MovieDescription";
+import { doGET } from "../../store/util/httpUtil";
+import { ENDPOINTS } from "../../utils/Constants";
 
 const CardContainer = (props) => {
   const [modal, setModal] = useState(false);
   const [movie, setMovie] = useState();
+  const [allMovies, setAllMovies] = useState();
+  const getData = async () => {
+    try {
+      const response = await doGET(ENDPOINTS.getmovies);
+      console.log(response?.data);
+      setAllMovies(response?.data);
+    } catch (error) {}
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   const cardsData = [
     {
       id: 1,
@@ -80,24 +93,27 @@ const CardContainer = (props) => {
   ];
   return (
     <div className="cards-movie-container">
-      {cardsData.map((card) => (
+      {allMovies?.map((card) => (
         <Card
           title={card.title}
           onClick={() => {
             setModal(true);
             setMovie(card);
           }}
-          content={card.content}
-          imgUrl={card.imgUrl}
-          
+          content={card.description}
+          imgUrl={card.image_path}
         />
       ))}
       {modal ? (
-        <Modal onChange={() => setModal(false)} className="col-sm-5"  style={{
-        backgroundColor: 'transparent',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        }}>
+        <Modal
+          onChange={() => setModal(false)}
+          className="col-sm-5"
+          style={{
+            backgroundColor: "transparent",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <MovieDescription movie={movie} />
         </Modal>
       ) : (
